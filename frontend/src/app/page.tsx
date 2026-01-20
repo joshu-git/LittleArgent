@@ -85,7 +85,7 @@ function ProjectPreview({
 
 				{live && (
 					<a href={live} target="_blank" rel="noopener noreferrer">
-						<button className="bg-accent-button text-button-text px-3 py-1 rounded-md text-sm hover:brightness-110 transition">
+						<button className="px-4 py-2 bg-accent-button text-button-text rounded-lg font-semibold hover:bg-accent-button-hover transition-colors">
 							Live
 						</button>
 					</a>
@@ -116,7 +116,7 @@ export default function HomePage() {
 
 				<div className="flex flex-wrap gap-4 pt-4">
 					<Link href="/projects">
-						<button className="bg-accent-button text-button-text px-4 py-2 rounded-md text-sm hover:brightness-110 transition">
+						<button className="px-4 py-2 bg-accent-button text-button-text rounded-lg font-semibold hover:bg-accent-button-hover transition-colors">
 							View Projects
 						</button>
 					</Link>

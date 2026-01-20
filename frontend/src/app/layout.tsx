@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 		template: "%s | Joshua Argent",
 	},
 	description:
-		"Full stack developer building modern web applications with TypeScript, Next.js, Express, and PostgreSQL.",
+		"Joshua Argent builds full stack web applications and automation systems, specializing in TypeScript, Next.js, Express, and PostgreSQL.",
 	keywords: [
 		"Joshua Argent",
 		"full stack developer",
@@ -19,23 +19,37 @@ export const metadata: Metadata = {
 		"TypeScript developer",
 		"Express developer",
 		"PostgreSQL developer",
-		"web developer portfolio",
+		"automation",
+		"workflow automation",
+		"business automation",
+		"web scraping",
+		"data analysis",
+		"portfolio",
 	],
 	metadataBase: new URL("https://littleargent.com"),
 	openGraph: {
 		title: "Joshua Argent | Full Stack Developer",
 		description:
-			"Full stack developer specializing in modern TypeScript, Next.js, Express, and PostgreSQL applications.",
+			"Full stack developer building scalable web applications and automation systems with TypeScript, Next.js, Express, and PostgreSQL.",
 		url: "https://littleargent.com",
-		siteName: "Joshua Argent",
+		siteName: "Joshua Argent Portfolio",
 		locale: "en_US",
 		type: "website",
+		images: [
+			{
+				url: "https://littleargent.com/og-image.png",
+				width: 1200,
+				height: 630,
+				alt: "Joshua Argent Portfolio",
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",
 		title: "Joshua Argent | Full Stack Developer",
 		description:
-			"Full stack developer building modern web applications with TypeScript and Next.js.",
+			"Joshua Argent builds scalable web applications and automation systems using TypeScript, Next.js, Express, and PostgreSQL.",
+		images: ["https://littleargent.com/og-image.png"],
 	},
 };
 
