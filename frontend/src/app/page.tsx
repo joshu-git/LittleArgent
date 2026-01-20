@@ -109,7 +109,7 @@ export default function HomePage() {
 				</p>
 
 				<p className="text-text-muted max-w-2xl leading-relaxed">
-					I’m Joshua Argent. I build full-stack applications with a
+					I’m Joshua Argent. I build full stack applications with a
 					strong focus on automating workflows, extracting insights
 					from data, and reducing manual processes.
 				</p>
