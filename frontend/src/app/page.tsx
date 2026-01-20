@@ -9,7 +9,7 @@ import {
 	SiVercel,
 	SiNetlify,
 } from "react-icons/si";
-import { JSX } from "react";
+import type { ReactNode } from "react";
 
 function ValueProp({
 	title,
@@ -28,7 +28,7 @@ function ValueProp({
 	);
 }
 
-function Skill({ name, icon }: { name: string; icon?: JSX.Element }) {
+function Skill({ name, icon }: { name: string; icon?: ReactNode }) {
 	return (
 		<div className="flex items-center gap-2 px-4 py-2 bg-card-soft rounded-md text-sm font-medium text-text-subtle hover:bg-accent-soft transition-colors">
 			{icon && icon}
@@ -64,14 +64,14 @@ function ProjectPreview({
 
 			<div className="flex gap-3 pt-4 flex-wrap">
 				<Link href={href}>
-					<button className="bg-card border border-[var(--color-border)] text-sm rounded-md px-3 py-1 hover:bg-accent-soft transition-colors">
+					<button className="bg-card border border-[var(--color-border)] text-text px-3 py-1 rounded-md hover:bg-accent-soft transition-colors text-sm">
 						Details
 					</button>
 				</Link>
 
 				{github && (
 					<a href={github} target="_blank" rel="noopener noreferrer">
-						<button className="bg-card border border-[var(--color-border)] text-sm rounded-md px-3 py-1 hover:bg-accent-soft transition-colors">
+						<button className="bg-card border border-[var(--color-border)] text-text px-3 py-1 rounded-md hover:bg-accent-soft transition-colors text-sm">
 							GitHub
 						</button>
 					</a>
@@ -79,7 +79,7 @@ function ProjectPreview({
 
 				{live && (
 					<a href={live} target="_blank" rel="noopener noreferrer">
-						<button className="bg-card border border-[var(--color-border)] text-sm rounded-md px-3 py-1 hover:bg-accent-soft transition-colors">
+						<button className="bg-accent-button text-button-text px-3 py-1 rounded-md text-sm hover:brightness-110 transition">
 							Live
 						</button>
 					</a>
@@ -104,9 +104,8 @@ export default function HomePage() {
 
 				<p className="text-text-muted max-w-2xl leading-relaxed">
 					I’m Joshua Argent. I build full-stack applications with
-					TypeScript, Next.js, and PostgreSQL, with a strong focus on
-					automating workflows, extracting insights from data, and
-					reducing manual processes.
+					TypeScript, Next.js, and PostgreSQL, focusing on automating
+					workflows, analyzing data, and reducing repetitive tasks.
 				</p>
 
 				<div className="flex flex-wrap gap-4 pt-4">
@@ -121,7 +120,7 @@ export default function HomePage() {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<button className="px-4 py-2 bg-card border border-[var(--color-border)] text-text-nav rounded-md hover:bg-accent-soft transition-colors">
+						<button className="px-4 py-2 bg-card border border-[var(--color-border)] text-text rounded-md hover:bg-accent-soft transition-colors">
 							Resume
 						</button>
 					</Link>
@@ -131,7 +130,7 @@ export default function HomePage() {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<button className="px-4 py-2 bg-card border border-[var(--color-border)] text-text-nav rounded-md hover:bg-accent-soft transition-colors">
+						<button className="px-4 py-2 bg-card border border-[var(--color-border)] text-text rounded-md hover:bg-accent-soft transition-colors">
 							GitHub
 						</button>
 					</a>
@@ -175,8 +174,6 @@ export default function HomePage() {
 					<Skill name="Node.js" icon={<SiNodedotjs size={18} />} />
 					<Skill name="Vercel" icon={<SiVercel size={18} />} />
 					<Skill name="Netlify" icon={<SiNetlify size={18} />} />
-					<Skill name="Automation" />
-					<Skill name="Machine Learning (learning)" />
 				</div>
 			</section>
 
