@@ -69,29 +69,29 @@ function ProjectPreview({
 
 export default function HomePage() {
 	return (
-		<div className="container py-24 space-y-32">
+		<div className="container py-16 space-y-20">
 			{/* HERO */}
-			<section className="max-w-3xl space-y-6">
+			<section className="max-w-3xl space-y-4 md:space-y-6">
 				<h1 className="text-5xl md:text-6xl font-extrabold tracking-tight">
 					Full Stack Web Developer
 				</h1>
 
 				<p className="text-lg md:text-xl">
-					I’m Joshua Argent - a full stack developer building
-					production ready web applications and business automations.
+					Building scalable web applications and automation systems.
 				</p>
 
 				<p className="text-text-muted max-w-2xl leading-relaxed">
-					I specialize in Next.js, Express, and PostgreSQL; designing
-					end to end systems, APIs, and data-driven workflows. My
-					current focus is automation projects involving web scraping,
-					data analysis, and process optimization - which is also why
-					I’m currently learning machine learning.
+					I’m Joshua Argent. I build full stack applications with
+					Next.js, Express, and PostgreSQL, with a strong focus on
+					automating workflows, extracting insights from data, and
+					reducing manual processes.
 				</p>
 
-				<div className="flex gap-4 pt-4">
+				<div className="flex flex-wrap gap-4 pt-4">
 					<Link href="/projects">
-						<button>View Projects</button>
+						<button className="px-4 py-2 bg-accent-button text-button-text rounded-md">
+							View Projects
+						</button>
 					</Link>
 
 					<Link
@@ -99,7 +99,7 @@ export default function HomePage() {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<button className="bg-card border border-[var(--color-border)]">
+						<button className="px-4 py-2 bg-card border border-[var(--color-border)] rounded-md">
 							Resume
 						</button>
 					</Link>
@@ -149,10 +149,12 @@ export default function HomePage() {
 					/>
 
 					<ProjectPreview
-						title="Project Three"
-						description="Performance-optimized frontend application with server rendering and clean UX."
-						stack="Next.js • TypeScript • Tailwind"
-						href="/projects/project-three"
+						title="PingElo"
+						description="Open-source ranked table tennis platform for tracking matches and leaderboards."
+						stack="Next.js • TypeScript • PostgreSQL • Open Source"
+						href="/projects/pingelo"
+						live="https://pingelo.vercel.app"
+						github="https://github.com/joshu-git/pingelo"
 					/>
 
 					<ProjectPreview
