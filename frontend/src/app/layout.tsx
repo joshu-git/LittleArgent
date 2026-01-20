@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: {
-		default: "Joshua Argent | Full Stack & Automation Developer",
+		default: "Joshua Argent | Full Stack Developer & Automation Engineer",
 		template: "%s | Joshua Argent",
 	},
 
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 	metadataBase: new URL("https://littleargent.com"),
 
 	openGraph: {
-		title: "Joshua Argent | Full Stack & Automation Developer",
+		title: "Joshua Argent | Full Stack Developer & Automation Engineer",
 		description:
 			"Full stack and automation developer building scalable systems, workflow automation, and modern web applications with TypeScript and Next.js.",
 		url: "https://littleargent.com",
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
 				url: "/og.png",
 				width: 1200,
 				height: 630,
-				alt: "Joshua Argent – Full Stack & Automation Developer",
+				alt: "Joshua Argent - Full Stack Developer & Automation Engineer",
 			},
 		],
 	},
 
 	twitter: {
 		card: "summary_large_image",
-		title: "Joshua Argent | Full Stack & Automation Developer",
+		title: "Joshua Argent | Full Stack Developer & Automation Engineer",
 		description:
 			"Building scalable web applications and automation systems with TypeScript, Next.js, and PostgreSQL.",
 		images: ["/og.png"],
