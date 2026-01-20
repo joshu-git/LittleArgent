@@ -65,7 +65,7 @@ function ProjectPreview({
 			<div className="flex gap-3 pt-4 flex-wrap">
 				<Link href={href}>
 					<button
-						className="px-4 py-2 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
+						className="px-3 py-1 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
 						style={{ color: "var(--color-text)" }}
 					>
 						Details
@@ -75,7 +75,7 @@ function ProjectPreview({
 				{github && (
 					<a href={github} target="_blank" rel="noopener noreferrer">
 						<button
-							className="px-4 py-2 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
+							className="px-3 py-1 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
 							style={{ color: "var(--color-text)" }}
 						>
 							GitHub
@@ -127,7 +127,7 @@ export default function HomePage() {
 						rel="noopener noreferrer"
 					>
 						<button
-							className="px-4 py-2 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
+							className="px-3 py-1 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
 							style={{ color: "var(--color-text)" }}
 						>
 							Resume
@@ -140,7 +140,7 @@ export default function HomePage() {
 						rel="noopener noreferrer"
 					>
 						<button
-							className="px-4 py-2 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
+							className="px-3 py-1 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
 							style={{ color: "var(--color-text)" }}
 						>
 							GitHub
