@@ -15,35 +15,37 @@ export default function Header() {
 	];
 
 	return (
-		<header className="bg-card sticky top-0 z-50 border-b border-divider">
+		<header className="bg-card sticky top-0 z-50">
 			<div className="container py-4 flex items-center justify-between">
 				{/* Identity */}
-				<Link href="/" className="flex flex-col leading-tight">
-					<span className="text-lg font-semibold tracking-tight text-text">
-						Joshua Argent
-					</span>
-					<span className="text-xs text-text-subtle">
-						Full Stack Web Developer
-					</span>
+				<Link
+					href="/"
+					className="text-2xl font-bold tracking-tight text-text"
+				>
+					Joshua Argent
 				</Link>
 
 				{/* Desktop Navigation */}
-				<nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+				<nav className="hidden md:flex items-center gap-4">
 					{navLinks.map((link) => (
 						<Link
 							key={link.href}
 							href={link.href}
-							className="text-text-muted hover:text-text transition-colors"
+							className="text-text-muted hover:text-text transition-colors text-sm font-medium"
 						>
 							{link.label}
 						</Link>
 					))}
 
+					{/* Resume as button */}
 					<Link
 						href="/resume.pdf"
-						className="px-3 py-1.5 rounded-full border border-border text-text-muted hover:text-text hover:border-border-strong transition-colors"
+						target="_blank"
+						rel="noopener noreferrer"
 					>
-						Resume
+						<button className="px-4 py-2 bg-accent-button text-button-text rounded-lg font-semibold hover:bg-accent-button-hover transition-colors">
+							Resume
+						</button>
 					</Link>
 				</nav>
 
@@ -71,7 +73,7 @@ export default function Header() {
 						<Link
 							key={link.href}
 							href={link.href}
-							className="text-sm text-text-muted hover:text-text transition-colors"
+							className="text-text-muted hover:text-text transition-colors text-sm font-medium"
 							onClick={() => setOpen(false)}
 						>
 							{link.label}
@@ -80,10 +82,13 @@ export default function Header() {
 
 					<Link
 						href="/resume.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
 						onClick={() => setOpen(false)}
-						className="mt-2 text-sm font-medium text-accent"
 					>
-						View Resume
+						<button className="px-4 py-2 bg-accent-button text-button-text rounded-lg font-semibold hover:bg-accent-button-hover transition-colors">
+							Resume
+						</button>
 					</Link>
 				</div>
 			</nav>

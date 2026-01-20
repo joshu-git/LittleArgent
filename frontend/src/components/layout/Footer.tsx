@@ -42,31 +42,30 @@ export default function Footer() {
 	};
 
 	return (
-		<footer className="bg-card mt-auto rounded-none border-t border-divider">
-			<div className="container py-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-				{/* Left: Identity */}
-				<div className="flex flex-col">
-					<Link
-						href="/"
-						className="text-lg font-semibold tracking-tight text-text"
-					>
-						Joshua Argent
-					</Link>
-					<span className="text-sm text-text-subtle">
-						Full Stack Web Developer
-					</span>
-				</div>
+		<footer className="bg-card mt-auto rounded-none">
+			<div className="container py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+				{/* Left: Name */}
+				<Link
+					href="/"
+					className="text-lg font-semibold tracking-tight text-text"
+				>
+					Joshua Argent
+				</Link>
 
-				{/* Center: Links */}
+				{/* Center: Social / Contact */}
 				<div className="flex items-center gap-4 text-sm">
 					<a
-						href="https://github.com/joshu-git"
+						href="github.com/joshu-git"
+						target="_blank"
+						rel="noopener noreferrer"
 						className="text-text-muted hover:text-text transition-colors"
 					>
 						GitHub
 					</a>
 					<a
 						href="argentjackjoshua@outlook.com"
+						target="_blank"
+						rel="noopener noreferrer"
 						className="text-text-muted hover:text-text transition-colors"
 					>
 						Email
