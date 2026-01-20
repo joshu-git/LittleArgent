@@ -43,19 +43,19 @@ export default function Footer() {
 
 	return (
 		<footer className="bg-card mt-auto rounded-none">
-			<div className="container py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+			<div className="container py-6 flex flex-wrap items-center justify-between gap-4">
 				{/* Left: Name */}
 				<Link
 					href="/"
-					className="text-lg font-semibold tracking-tight text-text"
+					className="text-lg font-semibold tracking-tight text-text flex-shrink-0"
 				>
 					Joshua Argent
 				</Link>
 
 				{/* Center: Social / Contact */}
-				<div className="flex items-center gap-4 text-sm">
+				<div className="flex flex-wrap items-center gap-4 justify-center flex-1">
 					<a
-						href="github.com/joshu-git"
+						href="https://github.com/joshu-git"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="text-text-muted hover:text-text transition-colors"
@@ -63,19 +63,17 @@ export default function Footer() {
 						GitHub
 					</a>
 					<a
-						href="argentjackjoshua@outlook.com"
-						target="_blank"
-						rel="noopener noreferrer"
+						href="mailto:argentjackjoshua@outlook.com"
 						className="text-text-muted hover:text-text transition-colors"
 					>
 						Email
 					</a>
 				</div>
 
-				{/* Right: Meta + Theme */}
-				<div className="flex items-center gap-4">
+				{/* Right: Meta + Theme + Resume */}
+				<div className="flex flex-wrap items-center gap-3 justify-end flex-shrink-0">
 					<span className="text-xs text-text-subtle">
-						© {new Date().getFullYear()}
+						© {new Date().getFullYear()} LittleArgent
 					</span>
 
 					<button
