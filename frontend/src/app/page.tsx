@@ -65,7 +65,7 @@ function ProjectPreview({
 			<div className="flex gap-3 pt-4 flex-wrap">
 				<Link href={href}>
 					<button
-						className="px-3 py-1 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
+						className="px-4 py-2 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
 						style={{ color: "var(--color-text)" }}
 					>
 						Details
@@ -116,7 +116,7 @@ export default function HomePage() {
 
 				<div className="flex flex-wrap gap-4 pt-4">
 					<Link href="/projects">
-						<button className="bg-accent-button text-button-text px-3 py-1 rounded-md text-sm hover:brightness-110 transition">
+						<button className="bg-accent-button text-button-text px-4 py-2 rounded-md text-sm hover:brightness-110 transition">
 							View Projects
 						</button>
 					</Link>
