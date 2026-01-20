@@ -43,42 +43,44 @@ export default function Footer() {
 
 	return (
 		<footer className="bg-card mt-auto rounded-none">
-			<div className="container py-6 flex flex-wrap items-center justify-between gap-4">
-				{/* Left: Name */}
+			<div className="container py-4 flex items-center justify-between gap-3">
+				{/* Name */}
 				<Link
 					href="/"
-					className="text-lg font-semibold tracking-tight text-text flex-shrink-0"
+					className="text-sm font-semibold tracking-tight text-text whitespace-nowrap"
 				>
 					Joshua Argent
 				</Link>
 
-				{/* Center: Social / Contact */}
-				<div className="flex flex-wrap items-center gap-4 justify-center flex-1">
+				{/* Social */}
+				<div className="flex items-center gap-4 whitespace-nowrap">
 					<a
 						href="https://github.com/joshu-git"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="text-text-muted hover:text-text transition-colors"
+						className="text-text-muted hover:text-text transition-colors text-sm"
 					>
 						GitHub
 					</a>
 					<a
 						href="mailto:argentjackjoshua@outlook.com"
-						className="text-text-muted hover:text-text transition-colors"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="text-text-muted hover:text-text transition-colors text-sm"
 					>
 						Email
 					</a>
 				</div>
 
-				{/* Right: Meta + Theme + Resume */}
-				<div className="flex flex-wrap items-center gap-3 justify-end flex-shrink-0">
-					<span className="text-xs text-text-subtle">
+				{/* Right */}
+				<div className="flex items-center gap-3 whitespace-nowrap">
+					<span className="hidden sm:inline text-xs text-text-subtle">
 						© {new Date().getFullYear()} LittleArgent
 					</span>
 
 					<button
 						onClick={toggleTheme}
-						className="px-3 py-1 text-xs rounded-full border border-border text-text-muted hover:text-text hover:border-border-strong transition-colors"
+						className="px-3 py-1 text-xs rounded-full border border-border text-text-muted hover:text-text transition-colors"
 					>
 						{theme === "light" ? "Light" : "Dark"}
 					</button>
