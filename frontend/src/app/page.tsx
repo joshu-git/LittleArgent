@@ -116,7 +116,7 @@ export default function HomePage() {
 
 				<div className="flex flex-wrap gap-4 pt-4">
 					<Link href="/projects">
-						<button className="px-3 py-1 rounded-md border border-[var(--color-border)] bg-card text-[var(--color-text)] hover:bg-accent-soft transition-colors text-sm">
+						<button className="bg-accent-button text-button-text px-3 py-1 rounded-md text-sm hover:brightness-110 transition">
 							View Projects
 						</button>
 					</Link>
