@@ -2,6 +2,9 @@ import Link from "next/link";
 import {
 	SiNextdotjs,
 	SiTypescript,
+	SiJavascript,
+	SiRender,
+	SiHtml5,
 	SiExpress,
 	SiPostgresql,
 	SiTailwindcss,
@@ -169,12 +172,14 @@ export default function HomePage() {
 			<section className="space-y-4">
 				<h2 className="text-2xl font-bold">Core Skills</h2>
 				<div className="flex flex-wrap gap-3">
-					<Skill name="Next.js" icon={<SiNextdotjs size={18} />} />
+					<Skill
+						name="JavaScript"
+						icon={<SiJavascript size={18} />}
+					/>
 					<Skill
 						name="TypeScript"
 						icon={<SiTypescript size={18} />}
 					/>
-					<Skill name="Express" icon={<SiExpress size={18} />} />
 					<Skill
 						name="PostgreSQL"
 						icon={<SiPostgresql size={18} />}
@@ -183,9 +188,13 @@ export default function HomePage() {
 						name="Tailwind CSS"
 						icon={<SiTailwindcss size={18} />}
 					/>
+					<Skill name="Html 5" icon={<SiHtml5 size={18} />} />
+					<Skill name="Next.js" icon={<SiNextdotjs size={18} />} />
+					<Skill name="Express" icon={<SiExpress size={18} />} />
 					<Skill name="Node.js" icon={<SiNodedotjs size={18} />} />
 					<Skill name="Vercel" icon={<SiVercel size={18} />} />
 					<Skill name="Netlify" icon={<SiNetlify size={18} />} />
+					<Skill name="Render" icon={<SiRender size={18} />} />
 				</div>
 			</section>
 
