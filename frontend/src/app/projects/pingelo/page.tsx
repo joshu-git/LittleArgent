@@ -30,8 +30,8 @@ export default function PingEloProjectPage() {
 
 				<p className="text-lg">
 					A free competitive ranking platform for groups of table
-					tennis players, built around a custom Elo-based system and
-					designed for real-world usage.
+					tennis players, built around a custom Elo based system and
+					designed for real world usage.
 				</p>
 
 				<div className="flex flex-wrap gap-4 pt-2">
@@ -63,7 +63,7 @@ export default function PingEloProjectPage() {
 							className="px-3 py-1 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
 							style={{ color: "var(--color-text)" }}
 						>
-							← All Projects
+							All Projects
 						</button>
 					</Link>
 				</div>
@@ -121,9 +121,8 @@ export default function PingEloProjectPage() {
 						<p className="text-text-muted leading-relaxed">
 							PingElo is a monorepo with a clear separation
 							between frontend and backend. The frontend
-							communicates exclusively through a typed API, with
-							all validation and ranking logic enforced
-							server-side.
+							communicates through a typed API, with all
+							validation and ranking logic enforced server side.
 						</p>
 					</Card>
 
@@ -147,7 +146,7 @@ export default function PingEloProjectPage() {
 					<Card>
 						<h3 className="font-semibold">Players</h3>
 						<p className="text-text-muted">
-							Represent individuals or doubles participants, with
+							Represents singles and doubles participants, with
 							support for players who do not yet have accounts.
 						</p>
 					</Card>
