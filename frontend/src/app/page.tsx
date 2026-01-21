@@ -11,6 +11,8 @@ import {
 	SiNodedotjs,
 	SiVercel,
 	SiNetlify,
+	SiGit,
+	SiGithub,
 } from "react-icons/si";
 import type { ReactNode } from "react";
 
@@ -194,7 +196,9 @@ export default function HomePage() {
 					<Skill name="Node.js" icon={<SiNodedotjs size={18} />} />
 					<Skill name="Vercel" icon={<SiVercel size={18} />} />
 					<Skill name="Netlify" icon={<SiNetlify size={18} />} />
-					<Skill name="Render" icon={<SiRender size={18} />} />k ~
+					<Skill name="Render" icon={<SiRender size={18} />} />
+					<Skill name="Git" icon={<SiGit size={18} />} />
+					<Skill name="Github" icon={<SiGithub size={18} />} />
 				</div>
 			</section>
 
