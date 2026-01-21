@@ -8,21 +8,15 @@ function Section({
 	children: React.ReactNode;
 }) {
 	return (
-		<section className="space-y-6">
+		<section className="space-y-8">
 			<h2 className="text-2xl font-bold">{title}</h2>
-			<div className="space-y-4 text-text-muted leading-relaxed">
-				{children}
-			</div>
+			{children}
 		</section>
 	);
 }
 
 function Card({ children }: { children: React.ReactNode }) {
-	return (
-		<div className="bg-card p-6 rounded-lg border border-[var(--color-border)]">
-			{children}
-		</div>
-	);
+	return <div className="bg-card p-6 hover-card space-y-3">{children}</div>;
 }
 
 export default function PingEloProjectPage() {
@@ -40,7 +34,7 @@ export default function PingEloProjectPage() {
 					designed for real-world usage.
 				</p>
 
-				<div className="flex gap-4 flex-wrap pt-2">
+				<div className="flex flex-wrap gap-4 pt-2">
 					<a
 						href="https://pingelo.vercel.app"
 						target="_blank"
@@ -56,13 +50,19 @@ export default function PingEloProjectPage() {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<button className="px-3 py-1 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors">
+						<button
+							className="px-3 py-1 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
+							style={{ color: "var(--color-text)" }}
+						>
 							GitHub
 						</button>
 					</a>
 
 					<Link href="/projects">
-						<button className="px-3 py-1 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors">
+						<button
+							className="px-3 py-1 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
+							style={{ color: "var(--color-text)" }}
+						>
 							← All Projects
 						</button>
 					</Link>
@@ -71,81 +71,71 @@ export default function PingEloProjectPage() {
 
 			{/* OVERVIEW */}
 			<Section title="Overview">
-				<p>
-					PingElo was built to solve a real problem in my college
-					table tennis group: tracking rankings and running informal
-					tournaments without spreadsheets or paid tools. The
-					application is actively used and designed to support any
-					group of players who want a lightweight, fair, and automated
-					competitive system.
-				</p>
+				<div className="max-w-3xl space-y-4 text-text-muted leading-relaxed">
+					<p>
+						PingElo was built to solve a real problem in my college
+						table tennis group: tracking rankings, determining
+						relative skill levels, and running tournaments without
+						spreadsheets or paid software.
+					</p>
+					<p>
+						The platform is actively used by my group and is
+						designed to support any collection of players who want a
+						fair, automated, and competitive ranking system with
+						minimal friction.
+					</p>
+				</div>
 			</Section>
 
-			{/* PROBLEM + CONSTRAINTS */}
-			<section className="grid md:grid-cols-2 gap-8">
-				<Card>
-					<h3 className="text-xl font-semibold mb-3">
-						Problem & Motivation
-					</h3>
-					<p>
-						Rankings were previously managed manually, which made it
-						difficult to determine relative skill levels and
-						frustrating to organize tournaments. Existing solutions
-						either didn’t fit the use case or required paid tiers
-						for basic functionality.
-					</p>
-					<p className="mt-3">
-						The goal was to build a free system that could
-						automatically enforce match rules, update rankings
-						fairly, and remain usable even when not every
-						participant wanted to create an account.
-					</p>
-				</Card>
-
-				<Card>
-					<h3 className="text-xl font-semibold mb-3">Constraints</h3>
-					<ul className="list-disc pl-5 space-y-1">
-						<li>Solo developer</li>
-						<li>No budget</li>
-						<li>Real users from the start</li>
-						<li>Evolving requirements as usage grew</li>
-					</ul>
-				</Card>
-			</section>
-
-			{/* SYSTEM */}
-			<Section title="System Overview">
-				<p>
-					PingElo is a monorepo with a clear separation between
-					frontend and backend. The frontend communicates exclusively
-					with a backend API; all ranking logic and data integrity
-					checks are enforced server-side.
-				</p>
-
-				<div className="grid md:grid-cols-2 gap-4">
+			{/* PROBLEM & CONSTRAINTS */}
+			<Section title="Problem & Constraints">
+				<div className="grid md:grid-cols-2 gap-8">
 					<Card>
-						<ul className="space-y-2">
-							<li>
-								<strong>Frontend:</strong> Next.js (TypeScript)
-							</li>
-							<li>
-								<strong>Backend:</strong> Express (TypeScript)
-							</li>
-							<li>
-								<strong>Database:</strong> PostgreSQL (Supabase)
-							</li>
-						</ul>
+						<h3 className="text-lg font-semibold">Problem</h3>
+						<p className="text-text-muted leading-relaxed">
+							Rankings were previously managed manually, making it
+							difficult to track progression, identify the
+							strongest players, and host tournaments reliably.
+							Existing tools either didn’t match the use case or
+							locked basic functionality behind paid tiers.
+						</p>
 					</Card>
 
 					<Card>
-						<ul className="space-y-2">
-							<li>
-								<strong>Hosting:</strong> Vercel (frontend),
-								Render (backend)
-							</li>
-							<li>
-								<strong>Architecture:</strong> API-driven
-							</li>
+						<h3 className="text-lg font-semibold">Constraints</h3>
+						<ul className="list-disc pl-5 text-text-muted space-y-1">
+							<li>Solo developer</li>
+							<li>No budget</li>
+							<li>Real users from day one</li>
+							<li>Evolving requirements as usage grew</li>
+						</ul>
+					</Card>
+				</div>
+			</Section>
+
+			{/* SYSTEM ARCHITECTURE */}
+			<Section title="System Architecture">
+				<div className="grid md:grid-cols-2 gap-8">
+					<Card>
+						<h3 className="text-lg font-semibold">Architecture</h3>
+						<p className="text-text-muted leading-relaxed">
+							PingElo is a monorepo with a clear separation
+							between frontend and backend. The frontend
+							communicates exclusively through a typed API, with
+							all validation and ranking logic enforced
+							server-side.
+						</p>
+					</Card>
+
+					<Card>
+						<h3 className="text-lg font-semibold">
+							Technology Stack
+						</h3>
+						<ul className="list-disc pl-5 text-text-muted space-y-1">
+							<li>Next.js + TypeScript (frontend)</li>
+							<li>Express + TypeScript (backend)</li>
+							<li>PostgreSQL via Supabase</li>
+							<li>Vercel (frontend), Render (backend)</li>
 						</ul>
 					</Card>
 				</div>
@@ -153,123 +143,155 @@ export default function PingEloProjectPage() {
 
 			{/* DATA MODEL */}
 			<Section title="Core Data Model">
-				<div className="grid md:grid-cols-2 gap-4">
+				<div className="grid md:grid-cols-3 gap-6">
 					<Card>
-						<ul className="space-y-2">
-							<li>
-								<strong>Players</strong>
-							</li>
-							<li>
-								<strong>Matches</strong>
-							</li>
-							<li>
-								<strong>Groups</strong>
-							</li>
-						</ul>
+						<h3 className="font-semibold">Players</h3>
+						<p className="text-text-muted">
+							Represent individuals or doubles participants, with
+							support for players who do not yet have accounts.
+						</p>
 					</Card>
+
 					<Card>
-						<ul className="space-y-2">
-							<li>
-								<strong>Rankings / Elo</strong>
-							</li>
-							<li>
-								<strong>Tournaments</strong>
-							</li>
+						<h3 className="font-semibold">Matches & Rankings</h3>
+						<p className="text-text-muted">
+							Matches drive Elo changes, which are stored
+							historically to allow leaderboards and progression
+							tracking.
+						</p>
+					</Card>
+
+					<Card>
+						<h3 className="font-semibold">Groups & Tournaments</h3>
+						<p className="text-text-muted">
+							Groups isolate competition pools, while tournaments
+							provide structured match organization.
+						</p>
+					</Card>
+				</div>
+			</Section>
+
+			{/* ELO SYSTEM */}
+			<Section title="Custom Elo System">
+				<div className="grid md:grid-cols-2 gap-8">
+					<Card>
+						<p className="text-text-muted leading-relaxed">
+							The Elo system was designed after researching chess
+							and competitive ranking models. Rating changes
+							depend not only on win/loss but also on relative Elo
+							difference and point margin.
+						</p>
+					</Card>
+
+					<Card>
+						<ul className="list-disc pl-5 text-text-muted space-y-1">
+							<li>Higher gains for upsets</li>
+							<li>Lower changes for expected wins</li>
+							<li>Reduced impact for close matches</li>
+							<li>Separate ratings for singles and doubles</li>
 						</ul>
 					</Card>
 				</div>
 			</Section>
 
-			{/* KEY DECISIONS */}
-			<Section title="Key Technical Decisions">
-				<Card>
-					<h3 className="font-semibold text-lg mb-2">
-						Custom Elo System
-					</h3>
-					<ul className="list-disc pl-5 space-y-1">
-						<li>Relative Elo difference</li>
-						<li>Point difference</li>
-						<li>Match closeness</li>
-					</ul>
-				</Card>
+			{/* VALIDATION & PERMISSIONS */}
+			<Section title="Validation, Permissions & Reliability">
+				<div className="grid md:grid-cols-3 gap-6">
+					<Card>
+						<h3 className="font-semibold">Match Validation</h3>
+						<ul className="list-disc pl-5 text-text-muted space-y-1">
+							<li>Win by two enforcement</li>
+							<li>Score format checks</li>
+							<li>Group membership validation</li>
+						</ul>
+					</Card>
 
-				<Card>
-					<h3 className="font-semibold text-lg mb-2">
-						Server-Side Validation
-					</h3>
-					<ul className="list-disc pl-5 space-y-1">
-						<li>Win by two enforcement</li>
-						<li>Group isolation</li>
-						<li>Permission checks</li>
-					</ul>
-				</Card>
+					<Card>
+						<h3 className="font-semibold">Authentication</h3>
+						<p className="text-text-muted">
+							Authenticated users can create matches. Admins can
+							submit and edit matches on behalf of players.
+						</p>
+					</Card>
 
-				<Card>
-					<h3 className="font-semibold text-lg mb-2">
-						Players Without Accounts
-					</h3>
-					<p>
-						Admins can create players without requiring sign-up.
-						Players can later claim their profile via a claim code,
-						reducing onboarding friction.
-					</p>
-				</Card>
+					<Card>
+						<h3 className="font-semibold">Roles</h3>
+						<ul className="list-disc pl-5 text-text-muted space-y-1">
+							<li>Players</li>
+							<li>Group admins</li>
+							<li>Managers (multi-group control)</li>
+						</ul>
+					</Card>
+				</div>
 			</Section>
 
 			{/* PERFORMANCE */}
-			<Section title="Performance & Reliability">
-				<ul className="list-disc pl-5 space-y-1">
-					<li>Paginated leaderboards and matches</li>
-					<li>Infinite loading</li>
-					<li>Backend error responses</li>
-					<li>Frontend validation and feedback</li>
-				</ul>
+			<Section title="Performance & UX">
+				<div className="grid md:grid-cols-2 gap-8">
+					<Card>
+						<ul className="list-disc pl-5 text-text-muted space-y-1">
+							<li>Paginated API responses</li>
+							<li>
+								Infinite loading for matches and leaderboards
+							</li>
+							<li>Clear error responses</li>
+						</ul>
+					</Card>
+
+					<Card>
+						<p className="text-text-muted leading-relaxed">
+							Actions are disabled until valid, providing
+							immediate feedback and preventing invalid
+							submissions before requests are made.
+						</p>
+					</Card>
+				</div>
 			</Section>
 
-			{/* DATA */}
+			{/* DATA & ANALYSIS */}
 			<Section title="Data & Analysis">
-				<p>
-					PingElo stores historical match and rating data, enabling
-					analysis of ranking stability, player progression, and match
-					outcomes.
-				</p>
-				<p>
-					I am exploring simple statistical models and trend analysis
-					to understand performance patterns before introducing more
-					complex machine learning approaches.
-				</p>
+				<div className="max-w-3xl space-y-4 text-text-muted leading-relaxed">
+					<p>
+						PingElo stores historical match and Elo data, enabling
+						analysis of player progression, ranking stability, and
+						competitive balance.
+					</p>
+					<p>
+						I am exploring statistical analysis and trend modeling
+						on this data before introducing more complex machine
+						learning approaches.
+					</p>
+				</div>
 			</Section>
 
 			{/* REFLECTION */}
-			<Section title="Reflection">
-				<Card>
-					<h3 className="font-semibold mb-1">
-						What I’m Most Proud Of
-					</h3>
-					<p>
-						The Elo system and the flexible player model that allows
-						participation without mandatory accounts.
-					</p>
-				</Card>
+			<Section title="Reflection & Future Work">
+				<div className="grid md:grid-cols-3 gap-6">
+					<Card>
+						<h3 className="font-semibold">Proudest Achievement</h3>
+						<p className="text-text-muted">
+							The Elo system and the flexible player model that
+							allows participation without mandatory accounts.
+						</p>
+					</Card>
 
-				<Card>
-					<h3 className="font-semibold mb-1">
-						What I’d Do Differently
-					</h3>
-					<p>
-						I would design groups and tournaments first to avoid
-						later refactoring for scalability.
-					</p>
-				</Card>
+					<Card>
+						<h3 className="font-semibold">What I’d Change</h3>
+						<p className="text-text-muted">
+							I would design groups and tournaments first to avoid
+							later refactoring for scalability.
+						</p>
+					</Card>
 
-				<Card>
-					<h3 className="font-semibold mb-1">What’s Next</h3>
-					<ul className="list-disc pl-5 space-y-1">
-						<li>Finish manager dashboard</li>
-						<li>Improve tournaments</li>
-						<li>Add Elo calculation tests</li>
-					</ul>
-				</Card>
+					<Card>
+						<h3 className="font-semibold">Next Steps</h3>
+						<ul className="list-disc pl-5 text-text-muted space-y-1">
+							<li>Complete manager dashboard</li>
+							<li>Improve tournament tooling</li>
+							<li>Add automated tests for Elo calculations</li>
+						</ul>
+					</Card>
+				</div>
 			</Section>
 		</div>
 	);
