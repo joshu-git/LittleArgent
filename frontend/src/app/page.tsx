@@ -190,11 +190,11 @@ export default function HomePage() {
 					/>
 					<Skill name="Html 5" icon={<SiHtml5 size={18} />} />
 					<Skill name="Next.js" icon={<SiNextdotjs size={18} />} />
-					<Skill name="Express" icon={<SiExpress size={18} />} />
+					<Skill name="Express.js" icon={<SiExpress size={18} />} />
 					<Skill name="Node.js" icon={<SiNodedotjs size={18} />} />
 					<Skill name="Vercel" icon={<SiVercel size={18} />} />
 					<Skill name="Netlify" icon={<SiNetlify size={18} />} />
-					<Skill name="Render" icon={<SiRender size={18} />} />
+					<Skill name="Render" icon={<SiRender size={18} />} />k ~
 				</div>
 			</section>
 
