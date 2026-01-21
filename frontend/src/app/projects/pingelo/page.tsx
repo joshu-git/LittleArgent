@@ -27,7 +27,6 @@ export default function PingEloProjectPage() {
 				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
 					PingElo
 				</h1>
-
 				<p className="text-lg">
 					A free competitive ranking platform for groups of table
 					tennis players, built around a custom Elo based system and
@@ -69,6 +68,39 @@ export default function PingEloProjectPage() {
 				</div>
 			</section>
 
+			{/* TECH STACK & FEATURES */}
+			<Section title="Tech Stack & Key Features">
+				<div className="grid md:grid-cols-2 gap-6">
+					<Card>
+						<h3 className="font-semibold">Frontend & Backend</h3>
+						<ul className="list-disc pl-5 text-text-muted space-y-1">
+							<li>Next.js + TypeScript</li>
+							<li>React, Tailwind CSS</li>
+							<li>Express + TypeScript API</li>
+							<li>Supabase PostgreSQL</li>
+							<li>Vercel (frontend), Render (backend)</li>
+						</ul>
+					</Card>
+
+					<Card>
+						<h3 className="font-semibold">Core Features</h3>
+						<ul className="list-disc pl-5 text-text-muted space-y-1">
+							<li>Custom Elo ranking (singles & doubles)</li>
+							<li>Flexible player system & claim codes</li>
+							<li>
+								Match validation (win by 2, score formats, group
+								checks)
+							</li>
+							<li>
+								Admin & manager dashboards for match & group
+								management
+							</li>
+							<li>Infinite scroll & paginated API responses</li>
+						</ul>
+					</Card>
+				</div>
+			</Section>
+
 			{/* OVERVIEW */}
 			<Section title="Overview">
 				<div className="max-w-3xl space-y-4 text-text-muted leading-relaxed">
@@ -79,122 +111,69 @@ export default function PingEloProjectPage() {
 						spreadsheets or paid software.
 					</p>
 					<p>
-						The platform is actively used by my group and is
-						designed to support any collection of players who want a
-						fair, automated, and competitive ranking system with
-						minimal friction.
+						The platform is actively used by my group and supports
+						any collection of players who want a fair, automated,
+						and competitive ranking system with minimal friction.
 					</p>
 				</div>
 			</Section>
 
-			{/* PROBLEM & CONSTRAINTS */}
-			<Section title="Problem & Constraints">
+			{/* PROBLEM & SOLUTION */}
+			<Section title="Problem & Solution">
 				<div className="grid md:grid-cols-2 gap-8">
 					<Card>
 						<h3 className="text-lg font-semibold">Problem</h3>
-						<p className="text-text-muted leading-relaxed">
-							Rankings were previously managed manually, making it
-							difficult to track progression, identify the
-							strongest players, and host tournaments reliably.
-							Existing tools either didn’t match the use case or
-							locked basic functionality behind paid tiers.
-						</p>
+						<ul className="list-disc pl-5 text-text-muted space-y-1">
+							<li>
+								Manual ranking made tournaments and leaderboards
+								unreliable.
+							</li>
+							<li>
+								Existing solutions were either paid or not
+								flexible for small groups.
+							</li>
+						</ul>
 					</Card>
 
 					<Card>
-						<h3 className="text-lg font-semibold">Constraints</h3>
+						<h3 className="text-lg font-semibold">Solution</h3>
 						<ul className="list-disc pl-5 text-text-muted space-y-1">
-							<li>Solo developer</li>
-							<li>No budget</li>
-							<li>Real users from day one</li>
-							<li>Evolving requirements as usage grew</li>
+							<li>
+								Custom Elo system with point margin & upset
+								handling.
+							</li>
+							<li>
+								Validation & automation reduce manual errors.
+							</li>
+							<li>
+								Player claim system allows participation without
+								accounts.
+							</li>
+							<li>
+								Admin & manager dashboards for flexible control.
+							</li>
 						</ul>
 					</Card>
 				</div>
 			</Section>
 
-			{/* SYSTEM ARCHITECTURE */}
-			<Section title="System Architecture">
-				<div className="grid md:grid-cols-2 gap-8">
-					<Card>
-						<h3 className="text-lg font-semibold">Architecture</h3>
-						<p className="text-text-muted leading-relaxed">
-							PingElo is a monorepo with a clear separation
-							between frontend and backend. The frontend
-							communicates through a typed API, with all
-							validation and ranking logic enforced server side.
-						</p>
-					</Card>
-
-					<Card>
-						<h3 className="text-lg font-semibold">
-							Technology Stack
-						</h3>
-						<ul className="list-disc pl-5 text-text-muted space-y-1">
-							<li>Next.js + TypeScript (frontend)</li>
-							<li>Express + TypeScript (backend)</li>
-							<li>PostgreSQL via Supabase</li>
-							<li>Vercel (frontend), Render (backend)</li>
-						</ul>
-					</Card>
-				</div>
+			{/* SCREENSHOT */}
+			<Section title="Product Screenshot">
+				<Card>
+					<img
+						src="/pingelo-screenshot.png"
+						alt="PingElo Leaderboard Screenshot"
+						className="w-full rounded-lg border border-[var(--color-border)]"
+					/>
+					<p className="text-sm text-text-muted mt-2">
+						Leaderboard - all data updates in real time with Elo
+						calculations.
+					</p>
+				</Card>
 			</Section>
 
-			{/* DATA MODEL */}
-			<Section title="Core Data Model">
-				<div className="grid md:grid-cols-3 gap-6">
-					<Card>
-						<h3 className="font-semibold">Players</h3>
-						<p className="text-text-muted">
-							Represents singles and doubles participants, with
-							support for players who do not yet have accounts.
-						</p>
-					</Card>
-
-					<Card>
-						<h3 className="font-semibold">Matches & Rankings</h3>
-						<p className="text-text-muted">
-							Matches drive Elo changes, which are stored
-							historically to allow leaderboards and progression
-							tracking.
-						</p>
-					</Card>
-
-					<Card>
-						<h3 className="font-semibold">Groups & Tournaments</h3>
-						<p className="text-text-muted">
-							Groups isolate competition pools, while tournaments
-							provide structured match organization.
-						</p>
-					</Card>
-				</div>
-			</Section>
-
-			{/* ELO SYSTEM */}
-			<Section title="Custom Elo System">
-				<div className="grid md:grid-cols-2 gap-8">
-					<Card>
-						<p className="text-text-muted leading-relaxed">
-							The Elo system was designed after researching chess
-							and competitive ranking models. Rating changes
-							depend not only on win/loss but also on relative Elo
-							difference and point margin.
-						</p>
-					</Card>
-
-					<Card>
-						<ul className="list-disc pl-5 text-text-muted space-y-1">
-							<li>Higher gains for upsets</li>
-							<li>Lower changes for expected wins</li>
-							<li>Reduced impact for close matches</li>
-							<li>Separate ratings for singles and doubles</li>
-						</ul>
-					</Card>
-				</div>
-			</Section>
-
-			{/* VALIDATION & PERMISSIONS */}
-			<Section title="Validation, Permissions & Reliability">
+			{/* VALIDATION & ROLES */}
+			<Section title="Validation, Permissions & Roles">
 				<div className="grid md:grid-cols-3 gap-6">
 					<Card>
 						<h3 className="font-semibold">Match Validation</h3>
@@ -217,60 +196,46 @@ export default function PingEloProjectPage() {
 						<h3 className="font-semibold">Roles</h3>
 						<ul className="list-disc pl-5 text-text-muted space-y-1">
 							<li>Players</li>
-							<li>Group admins</li>
+							<li>Group Admins</li>
 							<li>Managers (multi-group control)</li>
 						</ul>
 					</Card>
 				</div>
 			</Section>
 
-			{/* PERFORMANCE */}
-			<Section title="Performance & UX">
+			{/* ELO SYSTEM */}
+			<Section title="Custom Elo System">
 				<div className="grid md:grid-cols-2 gap-8">
 					<Card>
-						<ul className="list-disc pl-5 text-text-muted space-y-1">
-							<li>Paginated API responses</li>
-							<li>
-								Infinite loading for matches and leaderboards
-							</li>
-							<li>Clear error responses</li>
-						</ul>
-					</Card>
-
-					<Card>
 						<p className="text-text-muted leading-relaxed">
-							Actions are disabled until valid, providing
-							immediate feedback and preventing invalid
-							submissions before requests are made.
+							The Elo system adjusts ratings based on match
+							outcomes, point differences, and relative player
+							skill. Separate calculations exist for singles and
+							doubles.
 						</p>
 					</Card>
+					<Card>
+						<ul className="list-disc pl-5 text-text-muted space-y-1">
+							<li>Higher gains for upsets</li>
+							<li>Lower changes for expected wins</li>
+							<li>Reduced impact for close matches</li>
+							<li>
+								Historical tracking enables leaderboard
+								analytics
+							</li>
+						</ul>
+					</Card>
 				</div>
 			</Section>
 
-			{/* DATA & ANALYSIS */}
-			<Section title="Data & Analysis">
-				<div className="max-w-3xl space-y-4 text-text-muted leading-relaxed">
-					<p>
-						PingElo stores historical match and Elo data, enabling
-						analysis of player progression, ranking stability, and
-						competitive balance.
-					</p>
-					<p>
-						I am exploring statistical analysis and trend modeling
-						on this data before introducing more complex machine
-						learning approaches.
-					</p>
-				</div>
-			</Section>
-
-			{/* REFLECTION */}
+			{/* REFLECTION & NEXT STEPS */}
 			<Section title="Reflection & Future Work">
 				<div className="grid md:grid-cols-3 gap-6">
 					<Card>
 						<h3 className="font-semibold">Proudest Achievement</h3>
 						<p className="text-text-muted">
-							The Elo system and the flexible player model that
-							allows participation without mandatory accounts.
+							The Elo system and flexible player model that allows
+							participation without mandatory accounts.
 						</p>
 					</Card>
 
@@ -278,7 +243,7 @@ export default function PingEloProjectPage() {
 						<h3 className="font-semibold">What I’d Change</h3>
 						<p className="text-text-muted">
 							I would design groups and tournaments first to avoid
-							later refactoring for scalability.
+							later scalability refactors.
 						</p>
 					</Card>
 
