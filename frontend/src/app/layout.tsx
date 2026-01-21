@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 	},
 
 	description:
-		"Joshua Argent is a full stack and automation developer building scalable, data-driven web applications with TypeScript, Next.js, and PostgreSQL.",
+		"Joshua Argent is a full stack developer and automation engineer building scalable, data-driven web applications with TypeScript, Next.js, and PostgreSQL.",
 
 	keywords: [
 		"Joshua Argent",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Joshua Argent | Full Stack Developer & Automation Engineer",
 		description:
-			"Full stack and automation developer building scalable systems, workflow automation, and modern web applications with TypeScript and Next.js.",
+			"Full stack developer and automation engineer building scalable systems, workflow automation, and modern web applications with TypeScript and Next.js.",
 		url: "https://littleargent.com",
 		siteName: "Joshua Argent",
 		locale: "en_US",
