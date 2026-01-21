@@ -13,6 +13,8 @@ import {
 	SiNetlify,
 	SiGit,
 	SiGithub,
+	SiCss3,
+	SiReact,
 } from "react-icons/si";
 import type { ReactNode } from "react";
 
@@ -186,11 +188,13 @@ export default function HomePage() {
 						name="PostgreSQL"
 						icon={<SiPostgresql size={18} />}
 					/>
+					<Skill name="HTML5" icon={<SiHtml5 size={18} />} />
+					<Skill name="CCS3" icon={<SiCss3 size={18} />} />
 					<Skill
 						name="Tailwind CSS"
 						icon={<SiTailwindcss size={18} />}
 					/>
-					<Skill name="Html 5" icon={<SiHtml5 size={18} />} />
+					<Skill name="React" icon={<SiReact size={18} />} />
 					<Skill name="Next.js" icon={<SiNextdotjs size={18} />} />
 					<Skill name="Express.js" icon={<SiExpress size={18} />} />
 					<Skill name="Node.js" icon={<SiNodedotjs size={18} />} />
