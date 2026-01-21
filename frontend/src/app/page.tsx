@@ -189,7 +189,7 @@ export default function HomePage() {
 						icon={<SiPostgresql size={18} />}
 					/>
 					<Skill name="HTML5" icon={<SiHtml5 size={18} />} />
-					<Skill name="CCS3" icon={<SiCss3 size={18} />} />
+					<Skill name="CSS3" icon={<SiCss3 size={18} />} />
 					<Skill
 						name="Tailwind CSS"
 						icon={<SiTailwindcss size={18} />}
