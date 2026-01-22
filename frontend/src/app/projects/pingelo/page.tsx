@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 function Section({
 	title,
@@ -161,12 +160,10 @@ export default function PingEloProjectPage() {
 			{/* SCREENSHOT */}
 			<Section title="Product Screenshot">
 				<Card>
-					<Image
+					<img
 						src="/pingelo-screenshot.png"
 						alt="PingElo Leaderboard Screenshot"
-						fill
-						style={{ objectFit: "contain" }}
-						className="rounded-lg border border-[var(--color-border)]"
+						className="w-full rounded-lg border border-[var(--color-border)]"
 					/>
 					<p className="text-sm text-text-muted mt-2">
 						Leaderboard - all data updates in real time with Elo
