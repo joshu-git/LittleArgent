@@ -80,12 +80,12 @@ export default function ProjectsPage() {
 
 				<p className="text-lg">
 					A selection of full stack applications focused on
-					automation, data, and real-world usability.
+					automation, data, and real world usability.
 				</p>
 
 				<p className="text-text-muted leading-relaxed">
-					These projects reflect how I design systems end to end —
-					from problem definition and data modeling to backend logic,
+					These projects reflect how I design systems end to end. From
+					problem definition and data modeling to backend logic,
 					frontend UX, and deployment.
 				</p>
 			</section>
