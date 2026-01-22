@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function ProjectCard({
+function ProjectPreview({
 	title,
 	description,
 	stack,
@@ -92,9 +92,27 @@ export default function ProjectsPage() {
 
 			{/* PROJECTS GRID */}
 			<section className="grid md:grid-cols-2 gap-8">
-				<ProjectCard
+				<ProjectPreview
+					title="ArgentFlows"
+					description="Business automation platform focused on scraping, data analysis, and workflow optimization."
+					stack="Next.js • TypeScript • Express • PostgreSQL"
+					href="/projects/argentflows"
+					live="https://argentflows.vercel.app"
+					status="In Progress"
+				/>
+
+				<ProjectPreview
+					title="LittleFlows"
+					description="A productivity focused social platform designed to reduce noise and encourage intentional usage."
+					stack="Next.js • TypeScript • Express • PostgreSQL"
+					href="/projects/littleflows"
+					live="https://littleflows.vercel.app"
+					status="In Progress"
+				/>
+
+				<ProjectPreview
 					title="PingElo"
-					description="A competitive ranking platform for table tennis groups, built around a custom Elo system and designed for real-world usage."
+					description="Open source ranked table tennis platform for tracking matches and leaderboards."
 					stack="Next.js • TypeScript • Express • PostgreSQL"
 					href="/projects/pingelo"
 					live="https://pingelo.vercel.app"
@@ -102,27 +120,9 @@ export default function ProjectsPage() {
 					status="Active"
 				/>
 
-				<ProjectCard
-					title="ArgentFlows"
-					description="Business automation platform focused on scraping, workflow optimization, and data-driven decision making."
-					stack="Next.js • TypeScript • Express • PostgreSQL"
-					href="/projects/argentflows"
-					live="https://argentflows.vercel.app"
-					status="In Progress"
-				/>
-
-				<ProjectCard
-					title="LittleFlows"
-					description="A productivity-focused social platform designed to reduce noise and encourage intentional usage."
-					stack="Next.js • TypeScript • Express • PostgreSQL"
-					href="/projects/littleflows"
-					live="https://littleflows.vercel.app"
-					status="In Progress"
-				/>
-
-				<ProjectCard
+				<ProjectPreview
 					title="YearlyGo"
-					description="An open source accountability tracker for achieving long-term group goals."
+					description="Open source accountability tracker for achieving group goals over a year."
 					stack="Next.js • TypeScript • Express • PostgreSQL"
 					href="/projects/yearlygo"
 					live="https://yearlygo.vercel.app"

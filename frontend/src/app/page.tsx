@@ -51,6 +51,7 @@ function ProjectPreview({
 	href,
 	github,
 	live,
+	status,
 }: {
 	title: string;
 	description: string;
@@ -58,11 +59,19 @@ function ProjectPreview({
 	href: string;
 	github?: string;
 	live?: string;
+	status?: string;
 }) {
 	return (
-		<div className="bg-card p-6 hover-card flex flex-col justify-between">
-			<div>
-				<h3 className="text-xl font-semibold">{title}</h3>
+		<div className="bg-card p-6 hover-card flex flex-col justify-between space-y-6">
+			<div className="space-y-3">
+				<div className="flex items-center justify-between gap-4">
+					<h3 className="text-xl font-semibold">{title}</h3>
+					{status && (
+						<span className="text-xs px-2 py-1 rounded-md bg-card-soft text-text-subtle">
+							{status}
+						</span>
+					)}
+				</div>
 				<p className="text-sm text-text-muted mt-2 leading-relaxed">
 					{description}
 				</p>
@@ -222,6 +231,7 @@ export default function HomePage() {
 						stack="Next.js • TypeScript • Express • PostgreSQL"
 						href="/projects/argentflows"
 						live="https://argentflows.vercel.app"
+						status="In Progress"
 					/>
 
 					<ProjectPreview
@@ -230,6 +240,7 @@ export default function HomePage() {
 						stack="Next.js • TypeScript • Express • PostgreSQL"
 						href="/projects/littleflows"
 						live="https://littleflows.vercel.app"
+						status="In Progress"
 					/>
 
 					<ProjectPreview
@@ -239,6 +250,7 @@ export default function HomePage() {
 						href="/projects/pingelo"
 						live="https://pingelo.vercel.app"
 						github="https://github.com/joshu-git/pingelo"
+						status="Active"
 					/>
 
 					<ProjectPreview
@@ -248,6 +260,7 @@ export default function HomePage() {
 						href="/projects/yearlygo"
 						live="https://yearlygo.vercel.app"
 						github="https://github.com/joshu-git/yearlygo"
+						status="In Progress"
 					/>
 				</div>
 			</section>
