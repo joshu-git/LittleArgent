@@ -67,11 +67,7 @@ export default function Header() {
 				}`}
 				aria-hidden={!open}
 			>
-				<div
-					className={`"flex flex-col gap-2 px-4" ${
-						!open ? "hidden" : ""
-					}`}
-				>
+				<div className="flex flex-col gap-2 px-4">
 					{navLinks.map((link) => (
 						<Link
 							key={link.href}
