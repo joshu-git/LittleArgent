@@ -35,54 +35,20 @@ export default function ContactPage() {
 	}
 
 	return (
-		<div className="container py-16 space-y-14">
-			{/* HEADER */}
-			<section className="max-w-3xl space-y-4">
-				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-					Get in touch
-				</h1>
-				<p className="text-text-muted leading-relaxed">
-					Questions, opportunities, or ideas you want to explore? Send
-					a message or reach out directly.
-				</p>
-			</section>
-
-			{/* CONTENT */}
-			<section className="grid md:grid-cols-2 gap-10 items-start">
-				{/* LEFT: CONTACT INFO */}
-				<div className="space-y-6">
-					<div className="bg-card p-6 hover-card space-y-3">
-						<h2 className="text-xl font-semibold">
-							Email me directly
-						</h2>
-						<p className="text-sm text-text-muted leading-relaxed">
-							If you prefer not to use forms, feel free to email
-							me directly. I usually reply within 24 hours.
-						</p>
-
-						<a
-							href="mailto:joshua.argent@email.com"
-							className="inline-block"
-						>
-							<button className="px-4 py-2 bg-accent-button text-button-text rounded-lg font-semibold hover:bg-accent-button-hover transition-colors">
-								argentjackjoshua@outlook.com
-							</button>
-						</a>
-					</div>
-
-					<div className="bg-card-soft p-6 rounded-xl space-y-2">
-						<p className="text-sm text-text-subtle">
-							I’m especially interested in:
-						</p>
-						<ul className="list-disc pl-5 text-sm text-text-muted space-y-1">
-							<li>Full stack web roles</li>
-							<li>Automation & internal tooling</li>
-							<li>Data-driven systems</li>
-						</ul>
-					</div>
+		<div className="container py-20">
+			<section className="max-w-xl mx-auto space-y-10">
+				{/* HEADER */}
+				<div className="space-y-4 text-center">
+					<h1 className="text-4xl font-extrabold tracking-tight">
+						Contact
+					</h1>
+					<p className="text-text-muted leading-relaxed">
+						If you’d like to work together or have a question, send
+						me a message below.
+					</p>
 				</div>
 
-				{/* RIGHT: FORM */}
+				{/* FORM */}
 				<form
 					onSubmit={submitMessage}
 					className="bg-card p-8 rounded-xl hover-card space-y-6"
@@ -96,11 +62,11 @@ export default function ContactPage() {
 							required
 							className="
 								w-full px-4 py-3 rounded-md
-								bg-card-soft
+								bg-transparent
 								border border-[var(--color-border)]
 								focus:outline-none
-								focus:ring-2 focus:ring-accent-soft
-								focus:border-transparent
+								focus:border-accent
+								transition
 							"
 						/>
 					</div>
@@ -114,11 +80,11 @@ export default function ContactPage() {
 							required
 							className="
 								w-full px-4 py-3 rounded-md
-								bg-card-soft
+								bg-transparent
 								border border-[var(--color-border)]
 								focus:outline-none
-								focus:ring-2 focus:ring-accent-soft
-								focus:border-transparent
+								focus:border-accent
+								transition
 							"
 						/>
 					</div>
@@ -131,11 +97,11 @@ export default function ContactPage() {
 							required
 							className="
 								w-full px-4 py-3 rounded-md min-h-[140px]
-								bg-card-soft
+								bg-transparent
 								border border-[var(--color-border)]
 								focus:outline-none
-								focus:ring-2 focus:ring-accent-soft
-								focus:border-transparent
+								focus:border-accent
+								transition
 							"
 						/>
 					</div>
@@ -144,7 +110,7 @@ export default function ContactPage() {
 						type="submit"
 						disabled={loading}
 						className="
-							px-6 py-3
+							w-full py-3
 							bg-accent-button
 							text-button-text
 							rounded-lg
@@ -153,17 +119,32 @@ export default function ContactPage() {
 							transition-colors
 						"
 					>
-						{loading ? "Sending…" : "Send message"}
+						{loading ? "Sending…" : "Send Message"}
 					</button>
 
 					{success && (
-						<p className="text-sm text-green-500">
+						<p className="text-sm text-green-500 text-center">
 							Message sent successfully.
 						</p>
 					)}
 
-					{error && <p className="text-sm text-red-500">{error}</p>}
+					{error && (
+						<p className="text-sm text-red-500 text-center">
+							{error}
+						</p>
+					)}
 				</form>
+
+				{/* EMAIL FALLBACK */}
+				<p className="text-sm text-center text-text-muted">
+					Or email me directly at{" "}
+					<a
+						href="mailto:joshua.argent@email.com"
+						className="underline hover:text-accent transition"
+					>
+						joshua.argent@email.com
+					</a>
+				</p>
 			</section>
 		</div>
 	);
