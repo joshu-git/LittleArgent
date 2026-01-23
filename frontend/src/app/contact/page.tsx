@@ -104,7 +104,9 @@ export default function ContactPage() {
 				<p className="text-sm text-text-muted">
 					Or email me directly at{" "}
 					<a
-						href="mailto:joshua.argent@email.com"
+						href="mailto:argentjackjoshua@outlook.com"
+						target="_blank"
+						rel="noopener noreferrer"
 						className="underline hover:text-text transition"
 					>
 						argentjackjoshua@outlook.com
