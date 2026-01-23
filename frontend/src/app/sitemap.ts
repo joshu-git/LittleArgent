@@ -1,6 +1,5 @@
 import { MetadataRoute } from "next";
 
-//Gives importance to different pages
 export default function sitemap(): MetadataRoute.Sitemap {
 	const baseUrl = "https://littleargent.com";
 
@@ -12,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 1.0,
 		},
 		{
+			url: `${baseUrl}/about`,
+			lastModified: new Date(),
+			changeFrequency: "monthly",
+			priority: 0.9,
+		},
+		{
 			url: `${baseUrl}/projects`,
 			lastModified: new Date(),
 			changeFrequency: "weekly",
@@ -20,14 +25,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		{
 			url: `${baseUrl}/projects/pingelo`,
 			lastModified: new Date(),
-			changeFrequency: "weekly",
+			changeFrequency: "monthly",
 			priority: 0.7,
 		},
 		{
 			url: `${baseUrl}/contact`,
 			lastModified: new Date(),
-			changeFrequency: "weekly",
-			priority: 0.4,
+			changeFrequency: "monthly",
+			priority: 0.6,
 		},
 	];
 }
