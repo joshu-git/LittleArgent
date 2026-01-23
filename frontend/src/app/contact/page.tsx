@@ -11,6 +11,9 @@ export default function ContactPage() {
 	const [success, setSuccess] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 
+	const fieldClass =
+		"w-full rounded-lg px-4 py-3 bg-card border border-border";
+
 	async function submitMessage(e: React.FormEvent) {
 		e.preventDefault();
 		setLoading(true);
@@ -35,117 +38,79 @@ export default function ContactPage() {
 	}
 
 	return (
-		<div className="container py-20">
-			<section className="max-w-xl mx-auto space-y-10">
-				{/* HEADER */}
-				<div className="space-y-4 text-center">
-					<h1 className="text-4xl font-extrabold tracking-tight">
-						Contact
-					</h1>
-					<p className="text-text-muted leading-relaxed">
-						If you’d like to work together or have a question, send
-						me a message below.
-					</p>
-				</div>
+		<main className="max-w-5xl mx-auto px-4 py-16 space-y-16">
+			{/* HERO */}
+			<section className="text-center space-y-4">
+				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+					Contact
+				</h1>
+				<p className="text-lg max-w-2xl mx-auto text-text-muted">
+					Want to work together or have a question? Send me a message
+					below or email me directly.
+				</p>
+			</section>
 
-				{/* FORM */}
-				<form
-					onSubmit={submitMessage}
-					className="bg-card p-8 rounded-xl hover-card space-y-6"
-				>
-					<div className="space-y-2">
-						<label className="text-sm font-medium">Name</label>
-						<input
-							type="text"
-							value={name}
-							onChange={(e) => setName(e.target.value)}
-							required
-							className="
-								w-full px-4 py-3 rounded-md
-								bg-transparent
-								border border-[var(--color-border)]
-								focus:outline-none
-								focus:border-accent
-								transition
-							"
-						/>
-					</div>
+			{/* FORM */}
+			<section className="max-w-2xl mx-auto space-y-8">
+				<form onSubmit={submitMessage} className="space-y-6">
+					<input
+						type="text"
+						placeholder="Your name"
+						value={name}
+						onChange={(e) => setName(e.target.value)}
+						required
+						className={fieldClass}
+					/>
 
-					<div className="space-y-2">
-						<label className="text-sm font-medium">Email</label>
-						<input
-							type="email"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-							required
-							className="
-								w-full px-4 py-3 rounded-md
-								bg-transparent
-								border border-[var(--color-border)]
-								focus:outline-none
-								focus:border-accent
-								transition
-							"
-						/>
-					</div>
+					<input
+						type="email"
+						placeholder="Your email"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						required
+						className={fieldClass}
+					/>
 
-					<div className="space-y-2">
-						<label className="text-sm font-medium">Message</label>
-						<textarea
-							value={message}
-							onChange={(e) => setMessage(e.target.value)}
-							required
-							className="
-								w-full px-4 py-3 rounded-md min-h-[140px]
-								bg-transparent
-								border border-[var(--color-border)]
-								focus:outline-none
-								focus:border-accent
-								transition
-							"
-						/>
-					</div>
+					<textarea
+						placeholder="Your message"
+						value={message}
+						onChange={(e) => setMessage(e.target.value)}
+						required
+						className={`${fieldClass} min-h-[160px]`}
+					/>
 
 					<button
 						type="submit"
 						disabled={loading}
-						className="
-							w-full py-3
-							bg-accent-button
-							text-button-text
-							rounded-lg
-							font-semibold
-							hover:bg-accent-button-hover
-							transition-colors
-						"
+						className="w-full px-4 py-3 rounded-lg bg-accent-button text-button-text font-semibold hover:bg-accent-button-hover transition-colors"
 					>
 						{loading ? "Sending…" : "Send Message"}
 					</button>
 
 					{success && (
-						<p className="text-sm text-green-500 text-center">
+						<p className="text-sm text-center text-text-muted">
 							Message sent successfully.
 						</p>
 					)}
 
 					{error && (
-						<p className="text-sm text-red-500 text-center">
+						<p className="text-sm text-center text-text-muted">
 							{error}
 						</p>
 					)}
 				</form>
 
-				{/* EMAIL FALLBACK */}
+				{/* DIRECT EMAIL */}
 				<p className="text-sm text-center text-text-muted">
 					Or email me directly at{" "}
 					<a
 						href="mailto:joshua.argent@email.com"
-						className="underline hover:text-accent transition"
+						className="underline hover:text-text transition"
 					>
 						joshua.argent@email.com
 					</a>
 				</p>
 			</section>
-		</div>
+		</main>
 	);
 }
