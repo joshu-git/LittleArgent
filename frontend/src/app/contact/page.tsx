@@ -38,21 +38,23 @@ export default function ContactPage() {
 	}
 
 	return (
-		<main className="max-w-5xl mx-auto px-4 py-16 space-y-16">
-			{/* HERO */}
-			<section className="text-center space-y-4">
+		<div className="container py-16 space-y-16">
+			{/* HEADER */}
+			<section className="max-w-3xl space-y-4">
 				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
 					Contact
 				</h1>
-				<p className="text-lg max-w-2xl mx-auto text-text-muted">
-					Want to work together or have a question? Send me a message
-					below or email me directly.
+
+				<p className="text-text-muted leading-relaxed">
+					If you’d like to work together, discuss a project, or have a
+					question, feel free to reach out using the form below or by
+					email.
 				</p>
 			</section>
 
 			{/* FORM */}
-			<section className="max-w-2xl mx-auto space-y-8">
-				<form onSubmit={submitMessage} className="space-y-6">
+			<section className="space-y-8">
+				<form onSubmit={submitMessage} className="space-y-6 max-w-3xl">
 					<input
 						type="text"
 						placeholder="Your name"
@@ -82,35 +84,33 @@ export default function ContactPage() {
 					<button
 						type="submit"
 						disabled={loading}
-						className="w-full px-4 py-3 rounded-lg bg-accent-button text-button-text font-semibold hover:bg-accent-button-hover transition-colors"
+						className="px-6 py-3 rounded-lg bg-accent-button text-button-text font-semibold hover:bg-accent-button-hover transition-colors"
 					>
 						{loading ? "Sending…" : "Send Message"}
 					</button>
 
 					{success && (
-						<p className="text-sm text-center text-text-muted">
+						<p className="text-sm text-text-muted">
 							Message sent successfully.
 						</p>
 					)}
 
 					{error && (
-						<p className="text-sm text-center text-text-muted">
-							{error}
-						</p>
+						<p className="text-sm text-text-muted">{error}</p>
 					)}
 				</form>
 
 				{/* DIRECT EMAIL */}
-				<p className="text-sm text-center text-text-muted">
+				<p className="text-sm text-text-muted">
 					Or email me directly at{" "}
 					<a
 						href="mailto:joshua.argent@email.com"
 						className="underline hover:text-text transition"
 					>
-						joshua.argent@email.com
+						argentjackjoshua@outlook.com
 					</a>
 				</p>
 			</section>
-		</main>
+		</div>
 	);
 }
