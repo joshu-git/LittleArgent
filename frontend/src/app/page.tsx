@@ -137,16 +137,12 @@ export default function HomePage() {
 						</button>
 					</Link>
 
-					<Link
-						href="/resume.pdf"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
+					<Link href="/about">
 						<button
 							className="px-3 py-1 bg-card border border-[var(--color-border)] rounded-md hover:bg-accent-soft transition-colors"
 							style={{ color: "var(--color-text)" }}
 						>
-							Resume
+							About Me
 						</button>
 					</Link>
 

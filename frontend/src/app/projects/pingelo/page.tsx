@@ -257,6 +257,19 @@ export default function PingEloProjectPage() {
 					</Card>
 				</div>
 			</Section>
+
+			{/* CTA */}
+			<section className="pt-8">
+				<p className="text-sm text-text-subtle">
+					Interested in working together?{" "}
+					<Link
+						href="/contact"
+						className="underline hover:text-text transition"
+					>
+						Get in touch
+					</Link>
+				</p>
+			</section>
 		</div>
 	);
 }

@@ -130,6 +130,19 @@ export default function ProjectsPage() {
 					status="In Progress"
 				/>
 			</section>
+
+			{/* CTA */}
+			<section className="pt-12">
+				<p className="text-sm text-text-subtle">
+					Interested in how I work?{" "}
+					<Link
+						href="/about"
+						className="underline hover:text-text transition"
+					>
+						About me
+					</Link>
+				</p>
+			</section>
 		</div>
 	);
 }
