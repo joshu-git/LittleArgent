@@ -17,18 +17,13 @@ export default function ContactPage() {
 		setError(null);
 		setSuccess(false);
 
-		const { error } = await supabase.from("contact_messages").insert([
-			{
-				name,
-				email,
-				message,
-			},
-		]);
+		const { error } = await supabase
+			.from("contact_messages")
+			.insert([{ name, email, message }]);
 
 		setLoading(false);
 
 		if (error) {
-			console.error(error);
 			setError("Something went wrong. Please try again.");
 			return;
 		}
@@ -40,21 +35,54 @@ export default function ContactPage() {
 	}
 
 	return (
-		<div className="container py-16 space-y-12">
-			{/* PAGE INTRO */}
-			<section className="max-w-2xl space-y-4">
+		<div className="container py-16 space-y-14">
+			{/* HEADER */}
+			<section className="max-w-3xl space-y-4">
 				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
 					Get in touch
 				</h1>
-
 				<p className="text-text-muted leading-relaxed">
-					Have a question, opportunity, or just want to chat about a
-					project? Drop me a message and I’ll get back to you.
+					Questions, opportunities, or ideas you want to explore? Send
+					a message or reach out directly.
 				</p>
 			</section>
 
-			{/* FORM */}
-			<section className="max-w-2xl">
+			{/* CONTENT */}
+			<section className="grid md:grid-cols-2 gap-10 items-start">
+				{/* LEFT: CONTACT INFO */}
+				<div className="space-y-6">
+					<div className="bg-card p-6 hover-card space-y-3">
+						<h2 className="text-xl font-semibold">
+							Email me directly
+						</h2>
+						<p className="text-sm text-text-muted leading-relaxed">
+							If you prefer not to use forms, feel free to email
+							me directly. I usually reply within 24 hours.
+						</p>
+
+						<a
+							href="mailto:joshua.argent@email.com"
+							className="inline-block"
+						>
+							<button className="px-4 py-2 bg-accent-button text-button-text rounded-lg font-semibold hover:bg-accent-button-hover transition-colors">
+								argentjackjoshua@outlook.com
+							</button>
+						</a>
+					</div>
+
+					<div className="bg-card-soft p-6 rounded-xl space-y-2">
+						<p className="text-sm text-text-subtle">
+							I’m especially interested in:
+						</p>
+						<ul className="list-disc pl-5 text-sm text-text-muted space-y-1">
+							<li>Full stack web roles</li>
+							<li>Automation & internal tooling</li>
+							<li>Data-driven systems</li>
+						</ul>
+					</div>
+				</div>
+
+				{/* RIGHT: FORM */}
 				<form
 					onSubmit={submitMessage}
 					className="bg-card p-8 rounded-xl hover-card space-y-6"
@@ -65,13 +93,14 @@ export default function ContactPage() {
 							type="text"
 							value={name}
 							onChange={(e) => setName(e.target.value)}
-							placeholder="Your name"
 							required
 							className="
 								w-full px-4 py-3 rounded-md
 								bg-card-soft
 								border border-[var(--color-border)]
-								focus:outline-none focus:ring-2 focus:ring-accent-soft
+								focus:outline-none
+								focus:ring-2 focus:ring-accent-soft
+								focus:border-transparent
 							"
 						/>
 					</div>
@@ -82,13 +111,14 @@ export default function ContactPage() {
 							type="email"
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
-							placeholder="argentjackjoshua@outlook.com"
 							required
 							className="
 								w-full px-4 py-3 rounded-md
 								bg-card-soft
 								border border-[var(--color-border)]
-								focus:outline-none focus:ring-2 focus:ring-accent-soft
+								focus:outline-none
+								focus:ring-2 focus:ring-accent-soft
+								focus:border-transparent
 							"
 						/>
 					</div>
@@ -98,13 +128,14 @@ export default function ContactPage() {
 						<textarea
 							value={message}
 							onChange={(e) => setMessage(e.target.value)}
-							placeholder="Tell me what you’re thinking…"
 							required
 							className="
 								w-full px-4 py-3 rounded-md min-h-[140px]
 								bg-card-soft
 								border border-[var(--color-border)]
-								focus:outline-none focus:ring-2 focus:ring-accent-soft
+								focus:outline-none
+								focus:ring-2 focus:ring-accent-soft
+								focus:border-transparent
 							"
 						/>
 					</div>
