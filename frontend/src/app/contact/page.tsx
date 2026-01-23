@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { supabase } from "@/libs/supabase";
-import Link from "next/link";
 
 export default function ContactPage() {
 	const [name, setName] = useState("");
@@ -41,100 +40,100 @@ export default function ContactPage() {
 	}
 
 	return (
-		<div className="w-full flex justify-center mt-10 px-4">
-			<form
-				onSubmit={submitMessage}
-				className="
-					w-full
-					max-w-md
-					sm:max-w-lg
-					md:max-w-xl
-					bg-black/40
-					border border-white/10
-					rounded-xl
-					p-6
-					flex flex-col gap-4
-					shadow-lg
-				"
-			>
-				<h1 className="text-2xl font-bold text-center mb-1">Contact</h1>
+		<div className="container py-16 space-y-12">
+			{/* PAGE INTRO */}
+			<section className="max-w-2xl space-y-4">
+				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+					Get in touch
+				</h1>
 
-				<p className="text-sm text-white/70 text-center mb-3">
-					Send me a message and I’ll get back to you.
+				<p className="text-text-muted leading-relaxed">
+					Have a question, opportunity, or just want to chat about a
+					project? Drop me a message and I’ll get back to you.
 				</p>
+			</section>
 
-				<input
-					type="text"
-					placeholder="Name"
-					value={name}
-					onChange={(e) => setName(e.target.value)}
-					className="bg-black/60 border border-white/20 rounded-lg p-3"
-					required
-				/>
-
-				<input
-					type="email"
-					placeholder="Email"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-					className="bg-black/60 border border-white/20 rounded-lg p-3"
-					required
-				/>
-
-				<textarea
-					placeholder="Message"
-					value={message}
-					onChange={(e) => setMessage(e.target.value)}
-					className="bg-black/60 border border-white/20 rounded-lg p-3 min-h-[120px]"
-					required
-				/>
-
-				<button
-					type="submit"
-					disabled={loading}
-					className="
-						w-full py-3 bg-purple-600
-						hover:bg-purple-700
-						rounded-lg font-semibold
-						transition
-					"
+			{/* FORM */}
+			<section className="max-w-2xl">
+				<form
+					onSubmit={submitMessage}
+					className="bg-card p-8 rounded-xl hover-card space-y-6"
 				>
-					{loading ? "Sending..." : "Send Message"}
-				</button>
+					<div className="space-y-2">
+						<label className="text-sm font-medium">Name</label>
+						<input
+							type="text"
+							value={name}
+							onChange={(e) => setName(e.target.value)}
+							placeholder="Your name"
+							required
+							className="
+								w-full px-4 py-3 rounded-md
+								bg-card-soft
+								border border-[var(--color-border)]
+								focus:outline-none focus:ring-2 focus:ring-accent-soft
+							"
+						/>
+					</div>
 
-				{success && (
-					<p className="text-green-400 text-sm text-center">
-						Message sent successfully.
-					</p>
-				)}
+					<div className="space-y-2">
+						<label className="text-sm font-medium">Email</label>
+						<input
+							type="email"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+							placeholder="argentjackjoshua@outlook.com"
+							required
+							className="
+								w-full px-4 py-3 rounded-md
+								bg-card-soft
+								border border-[var(--color-border)]
+								focus:outline-none focus:ring-2 focus:ring-accent-soft
+							"
+						/>
+					</div>
 
-				{error && (
-					<p className="text-red-400 text-sm text-center">{error}</p>
-				)}
+					<div className="space-y-2">
+						<label className="text-sm font-medium">Message</label>
+						<textarea
+							value={message}
+							onChange={(e) => setMessage(e.target.value)}
+							placeholder="Tell me what you’re thinking…"
+							required
+							className="
+								w-full px-4 py-3 rounded-md min-h-[140px]
+								bg-card-soft
+								border border-[var(--color-border)]
+								focus:outline-none focus:ring-2 focus:ring-accent-soft
+							"
+						/>
+					</div>
 
-				<div className="text-center text-sm text-white/60 mt-2">
-					Or reach out via{" "}
-					<a
-						href="mailto:argentjackjoshua@outlook.com"
-						className="underline hover:text-white"
+					<button
+						type="submit"
+						disabled={loading}
+						className="
+							px-6 py-3
+							bg-accent-button
+							text-button-text
+							rounded-lg
+							font-semibold
+							hover:bg-accent-button-hover
+							transition-colors
+						"
 					>
-						email
-					</a>
-				</div>
+						{loading ? "Sending…" : "Send message"}
+					</button>
 
-				<Link
-					href="/"
-					className="
-						w-full text-center py-2
-						border border-white/20
-						rounded-lg
-						hover:bg-white/10
-						transition
-					"
-				>
-					Back to home
-				</Link>
-			</form>
+					{success && (
+						<p className="text-sm text-green-500">
+							Message sent successfully.
+						</p>
+					)}
+
+					{error && <p className="text-sm text-red-500">{error}</p>}
+				</form>
+			</section>
 		</div>
 	);
 }
