@@ -14,8 +14,8 @@ export default function Header() {
 	];
 
 	return (
-		<header className="bg-card sticky top-0 z-50">
-			<div className="container py-4 flex items-center justify-between">
+		<header className="bg-card shadow-md sticky top-0 z-50 rounded-none">
+			<div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
 				{/* Identity */}
 				<Link
 					href="/"
@@ -25,12 +25,12 @@ export default function Header() {
 				</Link>
 
 				{/* Desktop Navigation */}
-				<nav className="hidden md:flex items-center gap-4">
+				<nav className="hidden md:flex items-center gap-6 text-sm font-medium">
 					{navLinks.map((link) => (
 						<Link
 							key={link.href}
 							href={link.href}
-							className="text-text-muted hover:text-text transition-colors text-sm font-medium"
+							className="text-text-nav hover:text-accent-hover"
 						>
 							{link.label}
 						</Link>
@@ -54,25 +54,29 @@ export default function Header() {
 					onClick={() => setOpen((v) => !v)}
 					aria-label={open ? "Close menu" : "Open menu"}
 				>
-					{open ? <X size={22} /> : <Menu size={22} />}
+					{open ? <X size={24} /> : <Menu size={24} />}
 				</button>
 			</div>
 
 			{/* Mobile Navigation */}
 			<nav
-				className={`md:hidden bg-card overflow-hidden transition-[max-height] duration-300 ease-standard ${
+				className={`md:hidden bg-card-square overflow-hidden ${
 					open
 						? "max-h-80 py-4 pointer-events-auto"
 						: "max-h-0 pointer-events-none"
 				}`}
 				aria-hidden={!open}
 			>
-				<div className="flex flex-col gap-3 px-4">
+				<div
+					className={`"flex flex-col gap-2 px-4" ${
+						!open ? "hidden" : ""
+					}`}
+				>
 					{navLinks.map((link) => (
 						<Link
 							key={link.href}
 							href={link.href}
-							className="text-text-muted hover:text-text transition-colors text-sm font-medium"
+							className="py-2 text-text-nav hover:text-accent-hover"
 							onClick={() => setOpen(false)}
 						>
 							{link.label}
