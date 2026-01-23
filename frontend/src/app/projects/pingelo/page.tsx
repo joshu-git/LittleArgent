@@ -259,7 +259,7 @@ export default function PingEloProjectPage() {
 			</Section>
 
 			{/* CTA */}
-			<section className="pt-8">
+			<section className="pt-2">
 				<p className="text-sm text-text-subtle">
 					Interested in working together?{" "}
 					<Link

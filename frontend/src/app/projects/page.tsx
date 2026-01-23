@@ -132,7 +132,7 @@ export default function ProjectsPage() {
 			</section>
 
 			{/* CTA */}
-			<section className="pt-12">
+			<section className="pt-2">
 				<p className="text-sm text-text-subtle">
 					Interested in how I work?{" "}
 					<Link
