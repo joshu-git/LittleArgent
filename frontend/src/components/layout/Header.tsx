@@ -14,8 +14,8 @@ export default function Header() {
 	];
 
 	return (
-		<header className="bg-card shadow-md sticky top-0 z-50 rounded-none">
-			<div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+		<header className="bg-card sticky top-0 z-50">
+			<div className="container py-4 flex items-center justify-between">
 				{/* Identity */}
 				<Link
 					href="/"
