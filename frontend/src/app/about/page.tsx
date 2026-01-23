@@ -21,9 +21,9 @@ function Card({ children }: { children: React.ReactNode }) {
 
 export default function AboutPage() {
 	return (
-		<div className="container py-16 space-y-20">
+		<div className="container py-16 space-y-14">
 			{/* INTRO */}
-			<section className="max-w-3xl space-y-4">
+			<section className="max-w-3xl space-y-3">
 				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
 					About Me
 				</h1>
@@ -34,8 +34,8 @@ export default function AboutPage() {
 				</p>
 
 				<p className="text-text-muted leading-relaxed">
-					I build end-to-end web systems with a strong focus on
-					backend engineering, automation, and data-driven workflows.
+					I build end to end web systems with a strong focus on
+					backend engineering, automation, and data driven workflows.
 					I enjoy taking slow, manual, or inefficient processes and
 					turning them into systems that are reliable, scalable, and
 					easy to use.
@@ -43,7 +43,7 @@ export default function AboutPage() {
 
 				<p className="text-text-muted leading-relaxed">
 					While I work across the full stack, my strengths are in
-					backend development, system design, and automation —
+					backend development, system design, and automation -
 					building tools that save time, reduce errors, and scale
 					cleanly.
 				</p>
@@ -60,7 +60,7 @@ export default function AboutPage() {
 							I build full applications from frontend to backend,
 							including APIs, databases, authentication,
 							validation, and deployment. I focus on systems that
-							work properly in real-world usage, not just demos.
+							work properly in real world usage, not just demos.
 						</p>
 					</Card>
 
@@ -69,16 +69,16 @@ export default function AboutPage() {
 							Automation & Efficiency
 						</h3>
 						<p className="text-text-muted">
-							I love automating workflows — scraping data,
-							reducing repetitive tasks, and building systems that
-							replace manual processes. Making things faster and
-							more reliable is what I enjoy most.
+							I love automating workflows, scraping data, reducing
+							repetitive tasks, and building systems that replace
+							manual processes. Making things faster and more
+							reliable is what I enjoy most.
 						</p>
 					</Card>
 
 					<Card>
 						<h3 className="font-semibold">
-							Backend & Data-Oriented Thinking
+							Backend & Data Oriented Thinking
 						</h3>
 						<p className="text-text-muted">
 							I’m particularly interested in backend engineering,
@@ -94,7 +94,7 @@ export default function AboutPage() {
 			<Section title="Background">
 				<div className="max-w-3xl space-y-4 text-text-muted leading-relaxed">
 					<p>
-						I’m currently 17 and studying A-level Computer Science
+						I’m currently 17 and studying A level Computer Science
 						in the UK. I started programming seriously after getting
 						a laptop for my course and quickly moved beyond
 						coursework into building real projects that solve actual
@@ -103,16 +103,16 @@ export default function AboutPage() {
 
 					<p>
 						Projects like PingElo came directly from things I wanted
-						to use with friends — tracking rankings, automating
+						to use with friends - tracking rankings, automating
 						scoring, and removing the need for spreadsheets or
 						manual management. Seeing people actively use and
-						benefit from something I’ve built is one of the main
-						reasons I enjoy software development.
+						benefit from systems I’ve built is one of the main
+						reasons I enjoy full stack development and automation.
 					</p>
 
 					<p>
 						I’m still early in my career, but I focus on writing
-						production-ready code and building systems properly from
+						production ready code and building systems properly from
 						the start, rather than treating projects as throwaway
 						experiments.
 					</p>
@@ -127,9 +127,9 @@ export default function AboutPage() {
 						<p className="text-text-muted">
 							I’m actively looking for opportunities where I can
 							work as a developer, learn from experienced
-							engineers, and contribute to real production systems
-							— particularly roles involving backend development,
-							automation, or full stack work.
+							engineers, and contribute to real production
+							systems. Particularly roles involving backend
+							development, automation, or full stack work.
 						</p>
 					</Card>
 
@@ -138,11 +138,11 @@ export default function AboutPage() {
 							Freelance & Automation Work
 						</h3>
 						<p className="text-text-muted">
-							Alongside employment, I’m open to building
-							automation tools and internal systems for
-							individuals or small teams who want to streamline
-							workflows, process data, or replace manual
-							operations.
+							Alongside employment, I’m open to building full
+							stack applications and automation systems for
+							individuals, teams, and businesses who want to
+							streamline workflows, process data, or replace
+							manual operations with reliable software.
 						</p>
 					</Card>
 				</div>
