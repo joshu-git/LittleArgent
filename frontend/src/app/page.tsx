@@ -180,7 +180,7 @@ export default function HomePage() {
 			{/* SKILLS */}
 			<section className="space-y-4">
 				<h2 className="text-2xl font-bold">Core Skills</h2>
-				<div className="grid grid-cols-2 gap-3 md:flex md:flex-wrap md:gap-3">
+				<div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-3">
 					<Skill
 						name="JavaScript"
 						icon={<SiJavascript size={18} />}
