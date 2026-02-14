@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function CookieConsent() {
 	const [consent, setConsent] = useState<"accepted" | "declined" | null>(
@@ -22,7 +24,6 @@ export default function CookieConsent() {
 			if (storedConsent === "true") setConsent("accepted");
 			else if (storedConsent === "false") setConsent("declined");
 			else setVisible(true);
-			//show banner only if not yet accepted/declined
 		}, 0);
 	}, []);
 
@@ -37,6 +38,16 @@ export default function CookieConsent() {
 		setConsent("declined");
 		setVisible(false);
 	};
+
+	//Only render analytics if consent accepted
+	if (consent === "accepted") {
+		return (
+			<>
+				<Analytics />
+				<SpeedInsights />
+			</>
+		);
+	}
 
 	//Don't render anything if user declined or banner hidden
 	if (consent === "declined" || !visible) return null;
