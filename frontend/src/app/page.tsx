@@ -248,16 +248,6 @@ export default function HomePage() {
 						github="https://github.com/joshu-git/pingelo"
 						status="Active"
 					/>
-
-					<ProjectPreview
-						title="YearlyGo"
-						description="Open source accountability tracker for achieving group goals over a year."
-						stack="Next.js • TypeScript • Express • PostgreSQL"
-						href="/projects/yearlygo"
-						live="https://yearlygo.vercel.app"
-						github="https://github.com/joshu-git/yearlygo"
-						status="In Progress"
-					/>
 				</div>
 			</section>
 		</div>
