@@ -21,7 +21,7 @@ export default function ContactPage() {
 		setSuccess(false);
 
 		const { error } = await supabase
-			.from("contact_messages")
+			.from("la_contact_messages")
 			.insert([{ name, email, message }]);
 
 		setLoading(false);
